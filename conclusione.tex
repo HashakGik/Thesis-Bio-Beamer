@@ -1,0 +1,52 @@
+\section {Conclusione}
+
+\begin {frame}
+\frametitle {Conclusioni}
+\framesubtitle{Pro e contro}
+\begin{columns}[t]
+	\column{.45\textwidth}
+	\begin{block}
+		{Analisi simulativa}
+		\setbeamercolor{itemize item}{fg=green}
+		\begin{itemize}
+			\item [+] ampia diffusione
+			\item [+] rapido (ma dipende dalla durata della simulazione)
+			\item [+] richiede poche risorse
+		\end{itemize}
+		\setbeamercolor{itemize item}{fg=red}
+		\begin{itemize}
+			\item [-] non esaustivo
+			\item [-] accumula errori
+			\item [-] necessaria la media di pi\`u simulazioni \phantom{aaaaaaaaa}
+		\end{itemize}
+	\end{block}
+	\column{.45\textwidth}
+	\begin{block}{Model checking}
+		\setbeamercolor{itemize item}{fg=green}
+		\begin{itemize}
+			\item [+] esaustivo
+			\item [+] esente da errori di approssimazione
+			\item [+] indipendente dai limiti temporali imposti
+		\end{itemize}
+		\setbeamercolor{itemize item}{fg=red}
+		\begin{itemize}
+			\item [-] difficile da utilizzare
+			\item [-] lento e computazionalmente complesso
+			\item [-] avido di risorse
+		\end{itemize}
+	\end{block}
+\end{columns}
+
+\end{frame}
+
+\begin {frame}
+\frametitle {Conclusioni}
+\framesubtitle{Sviluppi futuri}
+\begin{enumerate}
+	\item Verifica \emph{in vitro} della fedelt\`a delle analisi \emph{in silico}
+	\item Aggiunta di interazioni complesse \emph{in vivo}
+	\item Model checking di aspetti che emergeranno eventualmente da nuovi esperimenti
+	\item Semplificazione del modello per verificare altre propriet\`a (e.g. $\mathbb{P}_{=?} [\mathcal{G} (\_SAM = 0 \rightarrow \mathcal{F}^{\leq T} \_SAM > soglia)]$, $\mathbb{P}_{=?} [\mathcal{F}\mathcal{G}^{\leq T} \_GAA\_INT > soglia]$)
+\end{enumerate}
+
+\end{frame}

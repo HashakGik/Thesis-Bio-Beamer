@@ -1,0 +1,137 @@
+\documentclass[aspectratio=169]{beamer}
+%\documentclass[aspectratio=43]{beamer}
+\usepackage [italian]{babel}
+\usepackage [utf8]{inputenc}
+\usepackage [T1]{fontenc}
+
+
+
+
+\title [Tesi di laurea in Scienze Biologiche]{Modellazione formale applicata ad analisi \emph{in silico} di reti metaboliche}
+\author [{\bfseries Lorello} Luca Salvatore] {Luca Salvatore Lorello}
+\date [A.A. \bfseries{17/18}] {Anno Accademico 2017--2018}
+\institute [{\bfseries DiSB}@UniUrb]{Dipartimento di Scienze Biomolecolari, Universit\`a degli Studi "Carlo Bo" di Urbino}
+%\logo{\includegraphics{alto.png}}
+\usetheme {AnnArbor}
+
+\theoremstyle {definition}
+\newtheorem {definizione}{Definizione}
+\theoremstyle {plain}
+\newtheorem {teorema}{Teorema}
+
+
+\usepackage{graphbox}
+\usepackage{tabularx}
+\usepackage{tikz}
+\usepackage{amsfonts,
+	amstext,
+	amssymb,
+	mathrsfs,
+	pgfplots,
+	pgfplotstable,
+	mathtools}
+\usepackage{cancel}
+
+\usetikzlibrary{positioning}
+\usetikzlibrary{pgfplots.groupplots,spy,backgrounds,shadows}
+
+\definecolor{a}{HTML}{FCD826}
+\definecolor{b}{HTML}{333399}
+\definecolor{c}{HTML}{808080}
+\definecolor{w}{HTML}{FFFFFF}
+
+\setbeamercolor*{palette quaternary}{bg=a}
+\setbeamercolor*{palette tertiary}{bg=a}
+\setbeamercolor*{palette secondary}{bg=a}
+\setbeamercolor*{palette primary}{bg=b}
+\setbeamercolor*{institute in head/foot}{fg=w,bg=b}
+\setbeamercolor*{page number in head/foot}{fg=w}
+
+\newsavebox\altobox
+\newsavebox\bassobox
+
+
+
+
+\setbeamertemplate{headline}{%
+			\sbox{\altobox}{\includegraphics[scale=0.5]{alto.png}}
+	\leavevmode%
+	\hbox{%
+		\includegraphics[height=\ht\altobox]{alto.png}\hfill
+		\begin{beamercolorbox}[wd=.7\paperwidth,ht=\ht\altobox,dp={0pt},sep={1ex},left]{section in head/foot}%
+			{\usebeamerfont{title in head/foot}{\bfseries\inserttitle}\par
+			\usebeamerfont{section in head/foot}\insertsection\phantom{pippo}}
+			\vskip0pt plus 1filll
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=.3\paperwidth,ht=\ht\altobox,dp={0pt},sep={2ex},left]{institute in head/foot}%
+			\usebeamerfont{institute in head/foot}\usebeamercolor[fg]{institute in head/foot}\insertshortinstitute
+%			\vskip0pt plus 1filll
+		\end{beamercolorbox}}%
+		\hskip0pt
+		\hrule
+		{\color{c}\hrule height 2pt\hfill}
+		\hrule
+	}
+
+\setbeamertemplate{footline}{%
+	\sbox{\bassobox}{\includegraphics[scale=0.5]{basso.png}}
+	\leavevmode%
+			\hrule
+			{\color{c}\hrule height 2pt\hfill}
+			\hrule
+	\hbox{%
+		\includegraphics[height=\ht\bassobox]{basso.png}\hfill
+		\begin{beamercolorbox}[wd=.7\paperwidth,ht=\ht\bassobox,dp={0pt},sep={0.5ex},left]{section in head/foot}%
+			\usebeamerfont{section in head/foot}{\insertshortauthor}\hspace*{\fill}{\insertshorttitle \hspace{1ex}(\insertshortdate)}
+			\vskip0pt plus 1filll
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=.3\paperwidth,ht=\ht\bassobox,dp={0pt},sep={0.5ex},left]{subsection in head/foot}%
+			\usebeamerfont{institute in head/foot}\usebeamercolor[fg]{institute in head/foot}{\bfseries\insertframenumber}/\inserttotalframenumber
+			\vskip0pt plus 1filll
+		\end{beamercolorbox}}%
+		\hskip0pt
+
+	}
+
+
+\setbeamercovered{transparent}
+
+
+\usepackage[backend=bibtex,style=trad-plain, sorting=nty,firstinits=true]{biblatex}
+\addbibresource{biblio.bib}
+
+
+\begin {document}
+\nocite{*}
+{
+	\logo{\tikz\node[opacity=.1,inner sep=0pt]{\includegraphics[width=.4\paperwidth,keepaspectratio]{uniurb_logo.pdf}};}
+
+\begin {frame}
+\begin{beamercolorbox}[shadow=true,rounded=true,sep=1ex,center]{title}
+\usebeamerfont{title}\inserttitle
+\end{beamercolorbox}
+\vspace*{\fill}
+    \begin{minipage}[t]{\textwidth}%
+    	\begin{tabularx}{\textwidth}{Xl}%
+    		Relatore: \hspace*{\fill} & Candidato: \\%
+    		Chiar.mo Prof.~Mauro Magnani & \insertauthor\\
+    		Correlatori:\\
+    		Chiar.mo Prof.~Marco Bernardo&\\Dott.ssa Noemi Bigini&\\Dott.ssa Francesca Pierig\`e&
+    	\end{tabularx} \\[5mm]%
+    	\centerline{\insertdate} %
+    \end{minipage}%
+\end{frame}
+}
+
+\begin {frame}
+\frametitle {Piano della presentazione}
+\tableofcontents
+\end{frame}
+
+\include{introduzione}
+%\include{teoria}
+\include{casostudio}
+\include{modellazione}
+\include{conclusione}
+
+\end{document}

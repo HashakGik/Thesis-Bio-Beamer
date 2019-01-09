@@ -1,0 +1,15 @@
+*~
+michaelis/*
+!michaelis/*.txt
+*.bib
+*.aux
+*.bbl
+*.blg
+*.log
+*.nav
+*.out
+*.xml
+*.snm
+*.gz
+*.toc
+*.vrb
